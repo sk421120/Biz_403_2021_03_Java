@@ -18,11 +18,11 @@
 	가. 프로젝트 생성하기 (Ctrl + Alt + N)
 	나. 패키지 생성하기 : 계층적 폴더 관리
   	
-  	+ 패키지 이름 짓기
+  	- 패키지 이름 짓기
 		가. 개발하는 회사(개인)의 고유 명칭 사용
-		예) naver.com, daum.net, callor.com
-			- 홈페이지 주소
-			- domain name
+			예) naver.com, daum.net, callor.com
+				- 홈페이지 주소
+				- domain name
 			패키지 시작 "com.naver", "net.daum", "com.callor"
 			어플명칭부여 "com.callor.score"
 			종류별 그룹 "com.callor.score.exec"

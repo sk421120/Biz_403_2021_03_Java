@@ -42,8 +42,13 @@
 7. local 저장소에 있는 파일들을 원격저장소로 업로드 하라
  git push https://github.com/sk421120/Biz_403_2021_03_Java.git master
 
-요약)
+## :dog: 요약)
+github에서 New repository 생성 "Biz_403_2021_03_Java"
+
  git init
  git config --local user.name sk421120
  git config --local user.email sk421120@naver.com
  touch .gitignore
+
+삭제
+자격 증명 관리자
