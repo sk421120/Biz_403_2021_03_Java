@@ -1,9 +1,9 @@
 # git repository(저장소)업로드 하기
-## 원격저장소
+## :dog: 원격저장소
 * https://github.com/sk421120/프로젝트.git
 * github.com 의 생성한 repository
 
-## local 프로젝트
+## :dog2: local 프로젝트
  C:/bizworks/javaworks
 
 ## local 저장소
@@ -13,7 +13,7 @@
 1. https://github.com/sk421120 접속
 2. github 로그인
 3. New repository 생성
-4. Biz_403_2021_03_Java 이름 저장하고 create...
+4. Biz_403_2021_03_Java 이름 저장하고 create
 
 ## local 저장소 설정(생성)
 * local 프로젝트 폴더를 local 저장소로 설정하기 <<
@@ -42,17 +42,22 @@
 7. local 저장소에 있는 파일들을 원격저장소로 업로드 하라
  git push https://github.com/sk421120/Biz_403_2021_03_Java.git master
 
-### 요약)
+### local - github 처음 생성 요약
 * github에서 New repository 생성 "Biz_403_2021_03_Java"
- * git init
- * git config --local user.name sk421120
- * git config --local user.email sk421120@naver.com
- * touch .gitignore
+* git init
+* git config --local user.name sk421120
+* git config --local user.email sk421120@naver.com
+* touch .gitignore
+* .gitignore 작성
+* git add .
+* git commit -m "github에 보여지는 comment"
+* git push https://github.com/sk421120/Biz_403_2021_03_Java.git master 
 
 ### 삭제
 * 자격 증명 관리자 github 삭제
 * .git 삭제
-
+* github에서 repository 삭제
+ - repository의 settings메뉴 최하단에 Delete this repository
 
 ## 원격저장소와 연결된 프로젝트에 새로운 코드 추가하기
 * git add .
