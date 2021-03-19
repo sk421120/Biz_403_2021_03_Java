@@ -9,7 +9,7 @@ package com.callor.controller;
  * 	한줄에 끝나는 명령문			- 보통 명령문 끝에 세미콜론(;)
  * 	다른 명령문을 포함하는 명령문	- 명령문이 그룹으로 설정되는 경우는 {} 가 있다
  */
-public class Con_02 {
+public class Cont_02 {
 	
 	public static void main(String[] arg) {
 		
