@@ -47,6 +47,10 @@ public class App_09 {
 		}
 		System.out.println("===========================================================");
 		// 과목별 총점, 총점의 총점, 평균의 평균
+		int intKorSum = 0;
+		for( int i = 0 ; i < strNames.length ; i++) {
+			
+		}
 		
 	}
 }
