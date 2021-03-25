@@ -42,15 +42,29 @@ public class App_09 {
 			System.out.printf("%3d\t", intEng[i]);
 			System.out.printf("%3d\t", intMath[i]);
 			
-			System.out.printf("%5d\t", intTotal[i]);
+			System.out.printf("%3d\t", intTotal[i]);
 			System.out.printf("%3.2f\n", floatAvg[i]);
 		}
 		System.out.println("===========================================================");
 		// 과목별 총점, 총점의 총점, 평균의 평균
 		int intKorSum = 0;
+		int intEngSum = 0;
+		int intMathSum = 0;
+		
+		int intTotalSum = 0;
+		
+		float floatAvgSum = 0;
+		
 		for( int i = 0 ; i < strNames.length ; i++) {
+			intKorSum += intKor[i];
+			intEngSum += intEng[i];
+			intMathSum += intMath[i];
 			
+			intTotalSum += intTotal[i];
 		}
+		floatAvgSum = (float) intTotalSum / strNames.length ;
+		
+		System.out.printf("\t 합계 \t%d\t%d\t%d\t%d\t%3.2f\n", intKorSum, intEngSum, intMathSum, intTotalSum, floatAvgSum);
 		
 	}
 }
