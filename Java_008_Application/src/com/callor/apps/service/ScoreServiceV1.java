@@ -29,8 +29,26 @@ public class ScoreServiceV1 {
 	}
 
 	// 순서대로 점수 입력받아 배열에 저장하기
+
+	/*
+	 * public void inputScore() { scan = new Scanner(System.in);
+	 * 
+	 * System.out.println(LinesService.dLines(50));
+	 * System.out.println(" 자바 고등학교 성적 처리 프로그램입니다.");
+	 * System.out.printf(" %d명의 학생의 성적을 입력하고 Enter를 눌러주세요.\n", intKor.length);
+	 * 
+	 * for (int i = 0; i < intKor.length; i++) {
+	 * System.out.println(LinesService.sLines(50));
+	 * System.out.printf("\t%d번 학생 성적\n", i + 1); System.out.printf(" 국어 >> ");
+	 * intKor[i] = scan.nextInt(); if(intKor[i] < 0 || intKor[i] > 100) {
+	 * System.out.println("0에서 100사이의 값을 입력해주세요."); } System.out.printf(" 영어 >> ");
+	 * intEng[i] = scan.nextInt(); System.out.printf(" 수학 >> "); intMath[i] =
+	 * scan.nextInt(); } scan.close(); }
+	 */
+
 	public void inputScore() {
 		scan = new Scanner(System.in);
+		int input = 0;
 
 		System.out.println(LinesService.dLines(50));
 		System.out.println(" 자바 고등학교 성적 처리 프로그램입니다.");
@@ -39,12 +57,36 @@ public class ScoreServiceV1 {
 		for (int i = 0; i < intKor.length; i++) {
 			System.out.println(LinesService.sLines(50));
 			System.out.printf("\t%d번 학생 성적\n", i + 1);
-			System.out.printf(" 국어 >> ");
-			intKor[i] = scan.nextInt();
-			System.out.printf(" 영어 >> ");
-			intEng[i] = scan.nextInt();
-			System.out.printf(" 수학 >> ");
-			intMath[i] = scan.nextInt();
+			while (true) {
+				System.out.printf(" 국어 >> ");
+				input = scan.nextInt();
+				if (input < 0 || input > 100) {
+					System.out.println("\t0에서 100사이의 값을 다시 입력해주세요.");
+				} else {
+					intKor[i] = input;
+					break;
+				}
+			}
+			while (true) {
+				System.out.printf(" 영어 >> ");
+				input = scan.nextInt();
+				if (input < 0 || input > 100) {
+					System.out.println("\t0에서 100사이의 값을 다시 입력해주세요.");
+				} else {
+					intEng[i] = input;
+					break;
+				}
+			}
+			while (true) {
+				System.out.printf(" 수학 >> ");
+				input = scan.nextInt();
+				if (input < 0 || input > 100) {
+					System.out.println("\t0에서 100사이의 값을 다시 입력해주세요.");
+				} else {
+					intMath[i] = input;
+					break;
+				}
+			}
 		}
 		scan.close();
 	}
@@ -81,19 +123,16 @@ public class ScoreServiceV1 {
 		scan = new Scanner(System.in);
 		int num = 0;
 
-		while (true) {
-			System.out.println(LinesService.sLines(50));
-			System.out.println("\t조회하고 싶은 학생의 학번을 입력해주세요.");
-			System.out.printf(" >> ");
-			num = scan.nextInt();	// error
-			if (num > 5 || num < 1) {
-				System.out.println(" 없는 번호 입니다!");
-			} else {
-				memNum = num;
-				scan.close();
-				break;
-			}
+		System.out.println(LinesService.sLines(50));
+		System.out.println("\t조회하고 싶은 학생의 학번을 입력해주세요.");
+		System.out.print(" >> ");
+		num = scan.nextInt(); // error
+		if (num > 5 || num < 1) {
+			System.out.println(" 없는 번호 입니다!");
+		} else {
+			memNum = num;
 		}
+		scan.close();
 	}
 
 	public void findScore() {
