@@ -8,7 +8,7 @@ public class ScoreServiceV1A {
 	// NullPointerException
 	// JDK 또는 여러가지 클래스를 가져와 사용하는 경우, 매우 자주 만나는 Exception
 	// 클래스를 사용하여 객체를 "선언만" 아직 사용할 준비가 되어 있지 않다
-	// = 생성, 초기화 가 안되었다
+	// 	= 생성, 초기화 가 안되었다
 	Scanner scan;
 
 	// 학생 수 만큼 과목점수를 저장할 배열 선언
@@ -20,7 +20,7 @@ public class ScoreServiceV1A {
 	// 필요한 개수를 매개변수로 전달하고 전달받은 매개변수(members)의 값을 사용
 	public ScoreServiceV1A(int members) {
 		// scan 객체를 생성(초기화)하기
-		// 객체를 선언하고 생성하는 코드가 없으면 사용하는 과정에서 NullPointException 발생
+		// 	객체를 선언하고 생성하는 코드가 없으면 사용하는 과정에서 NullPointException 발생
 		scan = new Scanner(System.in);
 
 		intKor = new int[members];
@@ -45,23 +45,39 @@ public class ScoreServiceV1A {
 	}
 	
 	// public : 전체, 공용, 모두, 누구나 객체.addNum() 형식으로 method 호출 명령 실행 Keyword
+	public void addNum() {
+		this.inputScore();
+		
+		// 현재 method코드의 끝이다 라는 선언
+		// method 선언 키워드가 void이면 return 명령을 생략할 수 있다.
+		return;
+	}
 	// private
 	// 개인적인, 현재 클래스에서만 method 호출 명령 실행 Keyword
-	// 객체.inputScore() 형식으로 사용 불가
-	// 외부에 공개하지 않고, 현재클래스의 코드에서만 호출할 수 있도록 제한하는 Keyword
+	// 	객체.inputScore() 형식으로 사용 불가
+	// 	외부에 공개하지 않고, 현재클래스의 코드에서만 호출할 수 있도록 제한하는 Keyword
 	
 	// Integer : void keyword 대신 정수를 선언하는 키워드를 사용하여 method 선언
-	// method 코드 끝에 반드시 return 명령문이 있어야 한다
+	//	method 코드 끝에 반드시 return 명령문이 있어야 한다
 	
 	/* 
 	 * 여기에서 사용된 integer 키워드는 변수를 선언하는 용도의 키워드가 아니고
 	 * return type 키워드라고 한다
 	 * method 코드내에 " return 값;" 형식의 코드가 반드시 있어야 함을 선언
 	 */
+	
+	/*
+	 * return type이 void형(type)일 경우는 return 명령문이 생략되거나
+	 * 	return 명령문만 단독으로 사용할 수 있다.
+	 */
+	
+	/*
+	 * return type이 void 형이 아닌경우
+	 * 	return 명령문은 반드시 코드내에 적절한 위치에 있어야 하고
+	 * 	return 값 형식으로 사용해야 한다.
+	 */
 	private Integer inputScore() {
 		int num = 0;
-	
-		// 현재 method코드의 void는 생략가능
 		return num;
 	}
 	
