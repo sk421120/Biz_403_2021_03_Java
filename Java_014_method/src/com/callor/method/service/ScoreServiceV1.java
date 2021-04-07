@@ -16,4 +16,19 @@ public class ScoreServiceV1 {
 			System.out.println("국어 점수 : " + retNum);
 		}
 	}
+	
+	public void scoreService() {
+		System.out.println("=".repeat(50));
+		System.out.println("추가할 성적의 과목을 입력해주세요.");
+		System.out.println("-".repeat(50));
+		System.out.print(" >> ");
+		String strSub = isV1.inputValue();
+		// null 조건은 생략
+		String title = String.format("%s의 성적범위 시작", strSub);
+		Integer start = isV1.inputValue(title);
+		title = String.format("%s의 성적범위 끝", strSub);
+		Integer end = isV1.inputValue(title);
+		isV1.inputValue(strSub,start,end);
+		
+	}
 }

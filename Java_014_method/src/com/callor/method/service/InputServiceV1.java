@@ -74,4 +74,9 @@ public class InputServiceV1 {
 			return intNum;
 		}
 	}
+	
+	public String inputValue() {
+		String strSub = scan.nextLine();
+		return strSub;
+	}
 }
