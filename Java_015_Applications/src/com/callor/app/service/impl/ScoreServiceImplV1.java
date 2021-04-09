@@ -81,7 +81,7 @@ public class ScoreServiceImplV1 implements ScoreService {
 		System.out.println("=".repeat(line));
 	}
 
-	private Integer selectMenu(String menu) {
+	protected Integer selectMenu(String menu) {
 		// TODO 메뉴선택 오류 잡기
 		Integer intMenu = 0;
 		try {
@@ -111,7 +111,7 @@ public class ScoreServiceImplV1 implements ScoreService {
 		}
 	}
 
-	private String inputNum() {
+	protected String inputNum() {
 		// TODO 학생 학번 입력
 		while (true) {
 			String strNum = null;
@@ -138,7 +138,7 @@ public class ScoreServiceImplV1 implements ScoreService {
 		}
 	}
 
-	private boolean inputNum(String strNum) {
+	protected boolean inputNum(String strNum) {
 		// TODO 학번 중복 체크
 		int nSize = scoreList.size();
 		if (nSize != 0) {

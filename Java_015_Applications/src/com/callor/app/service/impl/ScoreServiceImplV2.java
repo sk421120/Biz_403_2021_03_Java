@@ -69,8 +69,29 @@ public class ScoreServiceImplV2 implements ScoreService {
 	}
 
 	private void findList() {
-		// TODO 학번이나 학생이름을 입력받아 성적 조회하기
-		System.out.println("=".repeat(line));
+		while (true) {
+			// TODO 학번이나 학생이름을 입력받아 성적 조회하기
+			System.out.println("=".repeat(line));
+			System.out.println("1. 학번으로 조회하기");
+			System.out.println("2. 이름으로 조회하기");
+			System.out.println("\tQUIT 종료");
+			System.out.println("-".repeat(line));
+			System.out.print(" >> ");
+			String strMenu = scan.nextLine();
+			
+			if (strMenu.equals("QUIT")) {
+				break;
+			}
+			int menu = selectMenu(strMenu);
+			if(menu == 1) {
+				// 학번으로 조회
+			} else if(menu == 2) {
+				// 이름으로 조회
+			} else {
+				System.out.println("\t* 메뉴를 다시 입력해주세요!");
+			}
+		}
+		
 	}
 
 	private Integer selectMenu(String menu) {
