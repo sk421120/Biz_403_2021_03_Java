@@ -9,23 +9,7 @@ import com.callor.app.service.ScoreService;
 import com.sk421120.standard.InputService;
 import com.sk421120.standard.impl.InputServiceImplV1;
 
-/*
- * 1. 메뉴를 보여주고
- * 2. 성적입력 : 학생수의 제한이 없다.
- * 	학번
- * 	학생이름 inputName()
- * 	과목별 성적 inputScore()
- * 
- * 	학생성적입력 inputScore() 시작
- * 		- 학번입력
- * 		- 이름입력
- * 		- 점수입력
- * 
- * 	학생의 이름을 입력하는 inputName() method는 return type String 형이기 때문에
- * 	학생이름을 입력받고 입력받은 학생이름을 return한다
- * 	return 학생이름을 inputScore()에서 변수에 담아 처리를 할 수 있다.
- */
-public class ScoreServiceImplV1 implements ScoreService {
+public class ScoreServiceImplV2 implements ScoreService {
 
 	protected final int 국어 = 0;
 	protected final int 영어 = 1;
@@ -42,7 +26,7 @@ public class ScoreServiceImplV1 implements ScoreService {
 	protected String[] subject;
 	int line = 60;
 
-	public ScoreServiceImplV1() {
+	public ScoreServiceImplV2() {
 		scan = new Scanner(System.in);
 		scoreList = new ArrayList<ScoreVO>();
 		inService = new InputServiceImplV1();
@@ -54,10 +38,11 @@ public class ScoreServiceImplV1 implements ScoreService {
 		while (true) {
 			// TODO 성적처리 메뉴 선택
 			System.out.println("=".repeat(line));
-			System.out.println("\t자바 고교 성적처리 프로그램 V1");
+			System.out.println("\t자바 고교 성적처리 프로그램 V2");
 			System.out.println("-".repeat(line));
 			System.out.println("1. 학생 성적 입력하기");
 			System.out.println("2. 학생 성적 리스트");
+			System.out.println("3. 학생 학번 조회");
 			System.out.println("\tQUIT 종료");
 			System.out.println("-".repeat(line));
 			System.out.print(" >> ");
@@ -70,7 +55,9 @@ public class ScoreServiceImplV1 implements ScoreService {
 				this.inputScore();
 			} else if (menu == 2) {
 				this.printScore();
-			} else {
+			} else if (menu == 3) {
+				this.findList();
+			} else{
 				System.out.println("\t* 메뉴를 다시 입력해주세요!");
 			}
 
@@ -78,6 +65,11 @@ public class ScoreServiceImplV1 implements ScoreService {
 		System.out.println("=".repeat(line));
 		System.out.println("\t업무를 종료합니다!");
 		System.out.println("\t\tBye Bye~");
+		System.out.println("=".repeat(line));
+	}
+
+	private void findList() {
+		// TODO 학번이나 학생이름을 입력받아 성적 조회하기
 		System.out.println("=".repeat(line));
 	}
 
@@ -90,7 +82,6 @@ public class ScoreServiceImplV1 implements ScoreService {
 
 		}
 		return intMenu;
-
 	}
 
 	@Override
@@ -121,18 +112,16 @@ public class ScoreServiceImplV1 implements ScoreService {
 			if (num != null) {
 				// 정수 학번을 문자열로 바꾼다
 				strNum = String.format("%06d", num);
-				// 문자열 학번이 6자리 이상일 때
+				// 문자열 학번이 6자리 이상일 때 다시 입력받도록 한다.
 				if (strNum.length() > 6) {
 					System.out.println("\t* 올바른 학번 형식이 아닙니다!");
 					continue;
-					// 다시 학번 받도록 한다.
 				}
 				System.out.println("-".repeat(line));
 			}
-			// 학번이 중복이면
+			// 학번이 중복이면 다시 입력받게 한다
 			if (inputNum(strNum)) {
 				continue;
-				// 다시 입력받게 한다
 			}
 			return strNum;
 		}
@@ -191,7 +180,6 @@ public class ScoreServiceImplV1 implements ScoreService {
 		scoreList.add(vo);
 	}
 	
-
 	@Override
 	public void printScore() {
 		// TODO 학생 성적 리스트 출력
