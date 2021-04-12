@@ -14,7 +14,7 @@ public class FileWriter_02 {
 		
 		try {
 			fileWriter = new FileWriter(fileName);
-			out = new PrintWriter(fileName);
+			out = new PrintWriter(fileWriter);
 			
 			out.println("=".repeat(50));
 			out.println("구구단을 외우자");
