@@ -15,6 +15,7 @@ public class ScoreServiceImplV1 implements ScoreService{
 	protected List<ScoreVO> scoreList;
 	protected InputService inService;
 	protected String[] subject;
+	protected int line = 50;
 	
 	// 생성자 코드는 최소화
 	public ScoreServiceImplV1() {
@@ -46,45 +47,39 @@ public class ScoreServiceImplV1 implements ScoreService{
 //				addStudent();
 			} else if(intM == 2) {
 				// 성적등록
-//				inputScore();
+				inputScore();
 			} else if(intM == 3) {
 				// 성적정보 열기
-//				openScore();
+				readScore();
 			} else if(intM == 4) {
 				// 성적정보 저장
-//				saveScore();
+				saveScore();
 			} else if(intM == 5) {
 				// 성적정보 출력
-//				printScore();
+				this.printScore();
 			}
 		}
-		
+		System.out.println("=".repeat(line));
 		System.out.println("\t업무를 종료합니다!");
 		System.out.println("\t\tBye Bye~");
 	}
-	
-	public void addStudent() {
-		// TODO 학생정보 등록
-		// num은 중복체크
-		String num;
-		String name;
-	}
-	
+
+	@Override
 	public void inputScore() {
-		// TODO 성적등록
-//		Integer[] score
+		// TODO Auto-generated method stub
+		
 	}
-	
-	public void openScore() {
-		// TODO 성적정보 열기
-	}
-	
-	public void saveScore() {
-		// TODO 성적정보 저장
-	}
-	
+
+	@Override
 	public void printScore() {
-		// TODO 성적정보 출력
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void saveScore() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -92,5 +87,5 @@ public class ScoreServiceImplV1 implements ScoreService{
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 }

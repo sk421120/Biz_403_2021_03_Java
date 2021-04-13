@@ -111,15 +111,14 @@ public class ScoreVO {
 	 * 이제 vo객체.toString() method를 호출하면 vo객체의 변수들에 담긴 값들이 출력될 것이다.
 	 */
 	
-	@Override
-	public String toString() {
+	public String printLine() {
 		return num
 				+ "\t" + name
 				+ "\t" + intKor
 				+ "\t" + intEng
 				+ "\t" + intMath
 				+ "\t" + this.getTotal()
-				+ "\t" + this.getAvg() + "\n";
+				+ "\t" + this.getAvg();
 	}
 	
 }
