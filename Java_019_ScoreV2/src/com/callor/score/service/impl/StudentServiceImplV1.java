@@ -1,4 +1,4 @@
-package com.callor.score.model.impl;
+package com.callor.score.service.impl;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -38,14 +38,14 @@ public class StudentServiceImplV1 implements StudentService {
 		this.fileName = fileName;
 		studentList = new ArrayList<StudentVO>();
 		// 클래스를 객체로 생성할 때 method를 호출하여 데이터를 사용하도록 준비해 달라
-		this.loadStudent();
-		
-		this.findStudent();
+		this.loadStudent();		
 	}
 	
 	@Override
 	public void insertStudent() {
-		// TODO Auto-generated method stub
+		// TODO 학번, 이름, 국어, 영어, 수학 점수 입력 받아 추가하기
+		
+		
 		
 	}
 	/*
@@ -93,15 +93,21 @@ public class StudentServiceImplV1 implements StudentService {
 	@Override
 	public StudentVO getStudent(String num) {
 		// TODO 학번 맞는 학생정보 return하기
-		int nSize = studentList.size();
+		// 1번 코드
+//		int nSize = studentList.size();
+//		for(int i = 0 ; i < nSize ; i++) {
+//			StudentVO vo = studentList.get(i);
+//			if( num.equals( vo.getNum() ) ) {
+//				return vo;
+//			}
+//
+//		}
 		
-		for(int i = 0 ; i < nSize ; i++) {
-			StudentVO vo = studentList.get(i);
-			if( num.equals( vo.getNum() ) ) {
-				return vo;
-			}
-
+		// 2번 코드
+		for(StudentVO vo : studentList) {
+			if(vo.getNum().equals(num)) return vo;
 		}
+		
 		return null;
 	}
 	
