@@ -23,3 +23,8 @@
 ## MenuServiceImplV1
 * since 2021.04
 * MenuService interface 구현체
+
+## MenuServiceImplV2
+* since 2021.04.16
+* MenuService interface 구현체
+* V1 메뉴 수정
